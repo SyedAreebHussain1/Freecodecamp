@@ -143,3 +143,49 @@ function truncateString(str, num) {
 // console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11))
 // console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2))
 // console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length))
+
+
+
+function findElement(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            return arr[i]
+        }
+    }
+}
+
+// findElement([1, 2, 3, 4], num => num % 2 === 0)
+// findElement([1, 3, 5, 10, 4, 8, 9, 10], function (num) { return num % 2 === 0; })
+// console.log(findElement([1, 3, 5, 9], function (num) { return num % 2 === 0; }))
+
+
+
+
+function getTrueToTrueValue(arr) {
+    let indexOne = 0
+    let indexTwo = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]) {
+            indexOne += i
+            break
+        }
+    }
+    for (let j = arr.length - 1; j >= 0; j--) {
+        if (arr[j]) {
+            indexTwo += j
+            break
+        }
+    }
+    let data = arr.slice(indexOne, indexTwo + 1)
+    console.log(data);
+}
+// getTrueToTrueValue([false, 0, true, false, 0, true, 0, "Areeb", false])
+
+
+function booWho(bool) {
+    return typeof bool === "boolean"
+}
+
+// booWho(null);
+// booWho(false)
+// booWho(true)
